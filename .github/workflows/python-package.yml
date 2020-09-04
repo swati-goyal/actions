@@ -1,10 +1,8 @@
 name: Github Actions Experiment
 
-# on:
-#   schedule:
-#   - cron: "0 */1 * * *"
-
-on: [push]
+on:
+  schedule:
+  - cron: "0 */1 * * *"
 
 jobs:
   build:
@@ -23,11 +21,11 @@ jobs:
     - name: Install SeleniumBase
       run: |
         pip3 install seleniumbase
-    # - name: Lint with flake8
-    #   run: |
-    #     pip3 install flake8
-    #     # Stop the build if there are flake8 issues
-    #     flake8 . --count --show-source --statistics --exclude=temp
+    - name: Lint with flake8
+      run: |
+        pip3 install flake8
+        # Stop the build if there are flake8 issues
+        flake8 . --count --show-source --statistics --exclude=temp
     - name: Install Chrome and Firefox
       run: |
         sudo apt install google-chrome-stable
