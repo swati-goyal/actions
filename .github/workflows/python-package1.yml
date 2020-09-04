@@ -31,7 +31,6 @@ jobs:
     - name: Install Chrome and Firefox
       run: |
         sudo apt install google-chrome-stable
-        sudo apt-get install firefox
     - name: Install chromedriver and geckodriver (Firefox Webdriver)
       run: |
         seleniumbase install chromedriver
