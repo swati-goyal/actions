@@ -1,8 +1,10 @@
 name: Github Actions Experiment
 
-on:
-  schedule:
-  - cron: "0 */1 * * *"
+# on:
+#   schedule:
+#   - cron: "0 */1 * * *"
+
+on: [push]
 
 jobs:
   build:
@@ -35,4 +37,4 @@ jobs:
         seleniumbase install geckodriver
     - name: Run tests
       run: |
-        pytest test.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+        pytest test.py --browser=chrome
