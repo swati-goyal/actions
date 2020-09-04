@@ -1,7 +1,11 @@
+import unittest
 import requests
 
-url = "https://madrid.quintype.io/"
-path = "ampstories/visual-stories/why-you-need-a-dog-in-your-life"
-resp = requests.get(url+path)
+class TestStringMethods(unittest.TestCase):
+    def visit_url(self):
+        url = "https://madrid.quintype.io/"
+        path = "ampstories/visual-stories/why-you-need-a-dog-in-your-life"
+        requests.get(url+path)
 
-print(resp.text)
+if __name__ == '__main__':
+    unittest.main()

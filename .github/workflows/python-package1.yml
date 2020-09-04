@@ -35,10 +35,6 @@ jobs:
       run: |
         seleniumbase install chromedriver
         seleniumbase install geckodriver
-    - name: Make sure pytest is working
+    - name: Run unittest
       run: |
-        echo "def test_1(): pass" > nothing.py
-        pytest nothing.py
-    - name: Run pytest boilerplate_test.py --browser=chrome --headless
-      run: |
-        pytest visit-url.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+        python3 -m unittest visit-url.py  --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
