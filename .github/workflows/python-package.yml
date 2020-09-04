@@ -8,7 +8,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
       matrix:
@@ -23,11 +23,6 @@ jobs:
     - name: Install SeleniumBase
       run: |
         pip3 install seleniumbase
-    # - name: Lint with flake8
-    #   run: |
-    #     pip3 install flake8
-    #     # Stop the build if there are flake8 issues
-    #     flake8 . --count --show-source --statistics --exclude=temp
     - name: Install Chrome and Firefox
       run: |
         sudo apt install google-chrome-stable
@@ -37,4 +32,4 @@ jobs:
         seleniumbase install geckodriver
     - name: Run tests
       run: |
-        pytest test.py --browser=chrome --gui
+        pytest test.py --browser=chrome
