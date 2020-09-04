@@ -1,8 +1,10 @@
 name: Github Actions Experiment
 
-on:
-  schedule:
-  - cron: "0 */1 * * *"
+# on:
+#   schedule:
+#   - cron: "0 */1 * * *"
+
+on: [push]
 
 jobs:
   build:
@@ -18,12 +20,9 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip
     - name: Install SeleniumBase
       run: |
-        python3 setup.py install
+        pip3 install seleniumbase
     - name: Lint with flake8
       run: |
         pip3 install flake8
