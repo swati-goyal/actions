@@ -12,7 +12,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        python-version: [3.7, 3.8]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v1
@@ -23,11 +23,11 @@ jobs:
     - name: Install SeleniumBase
       run: |
         pip3 install seleniumbase
-    - name: Lint with flake8
-      run: |
-        pip3 install flake8
-        # Stop the build if there are flake8 issues
-        flake8 . --count --show-source --statistics --exclude=temp
+    # - name: Lint with flake8
+    #   run: |
+    #     pip3 install flake8
+    #     # Stop the build if there are flake8 issues
+    #     flake8 . --count --show-source --statistics --exclude=temp
     - name: Install Chrome and Firefox
       run: |
         sudo apt install google-chrome-stable
