@@ -37,4 +37,4 @@ jobs:
         seleniumbase install geckodriver
     - name: Run tests
       run: |
-        pytest test.py --browser=chrome
+        pytest test.py --browser=chrome --gui
