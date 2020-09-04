@@ -1,10 +1,8 @@
 name: Github Actions Experiment
 
-# on:
-#   schedule:
-#   - cron: "0 */1 * * *"
-
-on: [push]
+on:
+  schedule:
+  - cron: "0 */1 * * *"
 
 jobs:
   build:
