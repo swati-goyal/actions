@@ -23,11 +23,11 @@ jobs:
     - name: Install SeleniumBase
       run: |
         pip3 install seleniumbase
-    - name: Lint with flake8
-      run: |
-        pip3 install flake8
-        # Stop the build if there are flake8 issues
-        flake8 . --count --show-source --statistics --exclude=temp
+    # - name: Lint with flake8
+    #   run: |
+    #     pip3 install flake8
+    #     # Stop the build if there are flake8 issues
+    #     flake8 . --count --show-source --statistics --exclude=temp
     - name: Install Chrome and Firefox
       run: |
         sudo apt install google-chrome-stable
@@ -35,6 +35,6 @@ jobs:
       run: |
         seleniumbase install chromedriver
         seleniumbase install geckodriver
-    - name: Run unittest
+    - name: Run tests
       run: |
-        python3 -m unittest visit-url.py  --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
+        pytest test.py --browser=chrome --headless -v -s --junit-xml=junit/test-results.xml
