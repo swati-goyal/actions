@@ -1,5 +1,7 @@
 import requests
 
-resp = requests.get("https://madrid.quintype.io/ampstories/visual-stories/why-you-need-a-dog-in-your-life")
+url = "https://madrid.quintype.io/"
+path = "ampstories/visual-stories/why-you-need-a-dog-in-your-life"
+resp = requests.get(url+path)
 
 print(resp.text)
