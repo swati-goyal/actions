@@ -1,4 +1,4 @@
-name: Github Actions Experiment
+name: Visit story page urls every 2 hours (UTC)
 
 on:
   schedule:
