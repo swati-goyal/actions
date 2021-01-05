@@ -1,4 +1,4 @@
-name: Visit story page urls every 3 hours (UTC)
+name: Visit story page urls every 2 hours (UTC)
 
 on:
   schedule:
