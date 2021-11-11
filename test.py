@@ -21,7 +21,7 @@ class MyTestClass(BaseCase):
         # Staging
         url_stg = "https://malibu-integration-web.qtstage.io/"
         stg_paths = ["whatever/imported-story-1-should-get-published-4", "whatever/headline-09837232647442259", "whatever/headline-09710416993351383", 
-                     "whatever/headline-09369913954141263", "whatever/headline-07610392921128447"]
+                     "whatever/headline-09369913954141263", "with-new-story-slug-format"]
         
         for i in stg_paths:
             self.open_url(url_stg, i)
